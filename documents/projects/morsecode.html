@@ -1,0 +1,444 @@
+<!DOCTYPE html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Morse Code Converter</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <style>
+        section, article, nav, aside, header, footer, main { display: block;}
+        textarea{
+            width:50%;
+            height:25%;
+            padding:8px 16px;
+            margin:5px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input[type="button"]{
+            background-color:steelblue;
+            color:white;
+            padding:8px 16px;
+            margin:5px;
+            border:none;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        p{
+            margin:5px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        label{
+            margin:5px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        body{
+            background-color: antiquewhite;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var mc2c = {'.-': 'A', '-...': 'B', '-.-.': 'C',
+                '-..': 'D', '.': 'E', '..-.': 'F',
+                '--.': 'G', '....': 'H', '..': 'I',  
+                '.---': 'J', '-.-': 'K', '.-..': 'L',
+                '--': 'M', '-.': 'N', '---': 'O', 
+                '.--.': 'P', '--.-': 'Q', '.-.': 'R',
+                '...': 'S', '-': 'T', '..-': 'U', 
+                '...-': 'V', '.--': 'W', '-..-': 'X',
+                '-.--': 'Y', '--..': 'Z', '-----': '0', 
+                '.----': '1', '..---': '2', '...--': '3',
+                '....-': '4', '.....': '5', '-....': '6', 
+                '--...': '7', '---..': '8', '----.': '9',
+                '--..--':',', '.-.-.-':'.', '..--..':'?',
+                '-..-.':'/', '-....-':'-', '-.--.':'(',
+                '-.--.-':')', '|':' ', ' ':''};
+                var c2mc = { 'A':'.-', 'B':'-...', 
+                'C':'-.-.' , 'D':'-..', 'E':'.', 
+                'F':'..-.', 'G':'--.', 'H':'....', 
+                'I':'..', 'J':'.---', 'K':'-.-', 
+                'L':'.-..', 'M':'--', 'N':'-.', 
+                'O':'---', 'P':'.--.', 'Q':'--.-', 
+                'R':'.-.', 'S':'...', 'T':'-', 
+                'U':'..-', 'V':'...-', 'W':'.--', 
+                'X':'-..-', 'Y':'-.--', 'Z':'--..', 
+                'one':'.----', 'two':'..---', 'three':'...--', 
+                'four':'....-', 'five':'.....', 'six':'-....', 
+                'seven':'--...', 'eight':'---..', 'nine':'----.', 
+                'zero':'-----', 'coma':'--..--', 'dot':'.-.-.-', 
+                'qmark':'..--..', 'forwardslash':'-..-.', 'hyf':'-....-', 
+                'leftp':'-.--.', 'rightp':'-.--.-', 'space':'|'};
+
+        function charToMorseCode(){
+            let message = String(document.getElementById("inputText").value);
+            message = message.toUpperCase();
+            let encrypt = "";
+            for(let i=0; i<message.length;i++){
+                if(message.charAt(i) == 'A'){
+                    encrypt += c2mc.A + " ";
+                }
+                else if(message.charAt(i) == 'B'){
+                    encrypt += c2mc.B+ " ";
+                }
+                else if(message.charAt(i) == 'C'){
+                    encrypt += c2mc.C+ " ";
+                }
+                else if(message.charAt(i) == 'D'){
+                    encrypt += c2mc.D+ " ";
+                }
+                else if(message.charAt(i) == 'E'){
+                    encrypt += c2mc.E+ " ";
+                }
+                else if(message.charAt(i) == 'F'){
+                    encrypt += c2mc.F + " ";
+                }
+                else if(message.charAt(i) == 'G'){
+                    encrypt += c2mc.G + " ";
+                }
+                else if(message.charAt(i) == 'H'){
+                    encrypt += c2mc.H + " ";
+                }
+                else if(message.charAt(i) == 'I'){
+                    encrypt += c2mc.I + " ";
+                }
+                else if(message.charAt(i) == 'J'){
+                    encrypt += c2mc.J + " ";
+                }
+                else if(message.charAt(i) == 'K'){
+                    encrypt += c2mc.K + " ";
+                }
+                else if(message.charAt(i) == 'L'){
+                    encrypt += c2mc.L + " ";
+                }
+                else if(message.charAt(i) == 'M'){
+                    encrypt += c2mc.M + " ";
+                }
+                else if(message.charAt(i) == 'N'){
+                    encrypt += c2mc.N + " ";
+                }
+                else if(message.charAt(i) == 'O'){
+                    encrypt += c2mc.O + " ";
+                }
+                else if(message.charAt(i) == 'P'){
+                    encrypt += c2mc.P + " ";
+                }
+                else if(message.charAt(i) == 'Q'){
+                    encrypt += c2mc.Q + " ";
+                }
+                else if(message.charAt(i) == 'R'){
+                    encrypt += c2mc.R + " ";
+                }
+                else if(message.charAt(i) == 'S'){
+                    encrypt += c2mc.S + " ";
+                }
+                else if(message.charAt(i) == 'T'){
+                    encrypt += c2mc.T + " ";
+                }
+                else if(message.charAt(i) == 'U'){
+                    encrypt += c2mc.U + " ";
+                }
+                else if(message.charAt(i) == 'V'){
+                    encrypt += c2mc.V + " ";
+                }
+                else if(message.charAt(i) == 'W'){
+                    encrypt += c2mc.W + " "; 
+                }
+                else if(message.charAt(i) == 'X'){
+                    encrypt += c2mc.X + " ";
+                }
+                else if(message.charAt(i) == 'Y'){
+                    encrypt += c2mc.Y + " ";
+                }
+                else if(message.charAt(i) == 'Z'){
+                    encrypt += c2mc.Z + " ";
+                }
+                else if(message.charAt(i) == '1'){
+                    encrypt += c2mc.one + " ";
+                }
+                else if(message.charAt(i) == '2'){
+                    encrypt += c2mc.two + " ";
+                }
+                else if(message.charAt(i) == '3'){
+                    encrypt += c2mc.three + " ";
+                }
+                else if(message.charAt(i) == '4'){
+                    encrypt += c2mc.four + " ";
+                }
+                else if(message.charAt(i) == '5'){
+                    encrypt += c2mc.five + " ";
+                }
+                else if(message.charAt(i) == '6'){
+                    encrypt += c2mc.six + " ";
+                }
+                else if(message.charAt(i) == '7'){
+                    encrypt += c2mc.seven + " ";
+                }
+                else if(message.charAt(i) == '8'){
+                    encrypt += c2mc.eight + " ";
+                }
+                else if(message.charAt(i) == '9'){
+                    encrypt += c2mc.nine + " ";
+                }
+                else if(message.charAt(i) == '0'){
+                    encrypt += c2mc.zero + " ";
+                }
+                else if(message.charAt(i) == ','){
+                    encrypt += c2mc.coma + " ";
+                }
+                else if(message.charAt(i) == '.'){
+                    encrypt += c2mc.dot + " ";
+                }
+                else if(message.charAt(i) == '?'){
+                    encrypt += c2mc.qmark + " ";
+                }
+                else if(message.charAt(i) == '-'){
+                    encrypt += c2mc.hyf + " ";
+                }
+                else if(message.charAt(i) == '('){
+                    encrypt += c2mc.leftp + " ";
+                }
+                else if(message.charAt(i) == ')'){
+                    encrypt += c2mc.rightp + " ";
+                }
+                else if(message.charAt(i) == '/'){
+                    encrypt += c2mc.forwardslash + " ";
+                }
+                else if(message.charAt(i) == ' '){
+                    encrypt += c2mc.space + " ";
+                }
+            }
+
+            document.getElementById("outputText").value = encrypt;
+        }
+
+        function morseCodeToChar(){
+            let message = String(document.getElementById("inputText").value);
+            let decrypt = "";
+            for(let i=0; i<message.length;i++){
+                if(message.charAt(i)==' '){
+
+                }
+                else if(message.charAt(i)=='|'){
+                    decrypt+=" ";
+                }
+                else if(message.charAt(i) == c2mc.coma.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.coma.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.coma.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.coma.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.coma.charAt(4) &&(i+5) < message.length && message.charAt(i+5) == c2mc.coma.charAt(5)){
+                    decrypt += ",";
+                    i=i+5;
+                }
+                else if(message.charAt(i) == c2mc.dot.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.dot.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.dot.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.dot.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.dot.charAt(4) &&(i+5) < message.length && message.charAt(i+5) == c2mc.dot.charAt(5)){
+                    decrypt += ".";
+                    i=i+5;
+                }
+                else if(message.charAt(i) == c2mc.qmark.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.qmark.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.qmark.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.qmark.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.qmark.charAt(4) &&(i+5) < message.length && message.charAt(i+5) == c2mc.qmark.charAt(5)){
+                    decrypt += "?";
+                    i=i+5;
+                }
+                else if(message.charAt(i) == c2mc.hyf.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.hyf.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.hyf.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.hyf.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.hyf.charAt(4) &&(i+5) < message.length && message.charAt(i+5) == c2mc.hyf.charAt(5)){
+                    decrypt += "-";
+                    i=i+5;
+                }
+                else if(message.charAt(i) == c2mc.rightp.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.rightp.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.rightp.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.rightp.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.rightp.charAt(4) &&(i+5) < message.length && message.charAt(i+5) == c2mc.rightp.charAt(5)){
+                    decrypt += ")";
+                    i=i+5;
+                }
+                else if(message.charAt(i) == c2mc.one.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.one.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.one.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.one.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.one.charAt(4)){
+                    decrypt += "1";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.two.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.two.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.two.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.two.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.two.charAt(4)){
+                    decrypt += "2";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.three.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.three.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.three.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.three.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.three.charAt(4)){
+                    decrypt += "3";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.four.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.four.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.four.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.four.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.four.charAt(4)){
+                    decrypt += "4";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.five.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.five.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.five.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.five.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.five.charAt(4)){
+                    decrypt += "5";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.six.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.six.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.six.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.six.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.six.charAt(4)){
+                    decrypt += "6";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.seven.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.seven.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.seven.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.seven.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.seven.charAt(4)){
+                    decrypt += "7";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.eight.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.eight.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.eight.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.eight.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.eight.charAt(4)){
+                    decrypt += "8";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.nine.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.nine.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.nine.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.nine.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.nine.charAt(4)){
+                    decrypt += "9";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.zero.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.zero.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.zero.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.zero.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.zero.charAt(4)){
+                    decrypt += "0";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.leftp.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.leftp.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.leftp.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.leftp.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.leftp.charAt(4)){
+                    decrypt += "(";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.forwardslash.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.forwardslash.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.forwardslash.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.forwardslash.charAt(3) && (i+4) < message.length && message.charAt(i+4) == c2mc.forwardslash.charAt(4)){
+                    decrypt += "/";
+                    i=i+4;
+                }
+                else if(message.charAt(i) == c2mc.F.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.F.charAt(1) &&(i+2)< message.length &&message.charAt(i+2) == c2mc.F.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.F.charAt(3)){
+                    decrypt += "F";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.B.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.B.charAt(1) && message.charAt(i+2) == c2mc.B.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.B.charAt(3)){
+                    decrypt += 'B';
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.C.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.C.charAt(1) && message.charAt(i+2) == c2mc.C.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.C.charAt(3)){
+                    decrypt += "C";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.H.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.H.charAt(1) && message.charAt(i+2) == c2mc.H.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.H.charAt(3)){
+                    decrypt += "H";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.J.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.J.charAt(1) && message.charAt(i+2) == c2mc.J.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.J.charAt(3)){
+                    decrypt += "J";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.L.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.L.charAt(1) && message.charAt(i+2) == c2mc.L.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.L.charAt(3)){
+                    decrypt += "L";
+                    i= i+3;
+                }
+                else if(message.charAt(i) == c2mc.P.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.P.charAt(1) && message.charAt(i+2) == c2mc.P.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.P.charAt(3)){
+                    decrypt += "P";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.Q.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.Q.charAt(1) && message.charAt(i+2) == c2mc.Q.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.Q.charAt(3)){
+                    decrypt += "Q";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.R.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.R.charAt(1) && (i+2) < message.length && message.charAt(i+2) == c2mc.R.charAt(2)){
+                    decrypt += "R";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.V.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.V.charAt(1) && message.charAt(i+2) == c2mc.V.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.V.charAt(3)){
+                    decrypt += "V";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.X.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.X.charAt(1) && message.charAt(i+2) == c2mc.X.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.X.charAt(3)){
+                    decrypt += "X";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.Y.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.Y.charAt(1) && message.charAt(i+2) == c2mc.Y.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.Y.charAt(3)){
+                    decrypt += "Y";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.Z.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.Z.charAt(1) && message.charAt(i+2) == c2mc.Z.charAt(2) && (i+3)< message.length && message.charAt(i+3) == c2mc.Z.charAt(3)){
+                    decrypt += "Z";
+                    i=i+3;
+                }
+                else if(message.charAt(i) == c2mc.D.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.D.charAt(1) && (i+2) < message.length && message.charAt(i+2) == c2mc.D.charAt(2)){
+                    decrypt += "D";
+                    i=i+2;
+                }
+                else if(message.charAt(i) == c2mc.G.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.G.charAt(1) && (i+2) < message.length && message.charAt(i+2) == c2mc.G.charAt(2)){
+                    decrypt += "G";
+                    i=i+2;
+                }
+                else if(message.charAt(i) == c2mc.K.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.K.charAt(1) && (i+2) < message.length && message.charAt(i+2) == c2mc.K.charAt(2)){
+                    decrypt += "K";
+                    i=i+2;
+                }
+                else if(message.charAt(i) == c2mc.O.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.O.charAt(1) && (i+2) < message.length && message.charAt(i+2) == c2mc.O.charAt(2)){
+                    decrypt += "O";
+                    i=i+2;
+                }
+                else if(message.charAt(i) == c2mc.S.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.S.charAt(1) && (i+2) < message.length && message.charAt(i+2) == c2mc.S.charAt(2)){
+                    decrypt += "S";
+                    i=i+2;
+                }
+                else if(message.charAt(i) == c2mc.U.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.U.charAt(1) && (i+2) < message.length && message.charAt(i+2) == c2mc.U.charAt(2)){
+                    decrypt += "U";
+                    i=i+2;
+                }
+                else if(message.charAt(i) == c2mc.W.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.W.charAt(1) && (i+2) < message.length && message.charAt(i+2) == c2mc.W.charAt(2)){
+                    decrypt += "W";
+                    i=i+2;
+                }
+                else if(message.charAt(i) == c2mc.I.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.I.charAt(1)){
+                    decrypt += "I";
+                    i++;
+                }
+                else if(message.charAt(i) == c2mc.A.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.A.charAt(1)){
+                    decrypt += 'A';
+                    i++;
+                }
+                else if(message.charAt(i) == c2mc.M.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.M.charAt(1)){
+                    decrypt += "M";
+                    i++;
+                }
+                else if(message.charAt(i) == c2mc.N.charAt(0) && (i+1)< message.length && message.charAt(i+1) == c2mc.N.charAt(1)){
+                    decrypt += "N";
+                    i++;
+                }
+                else if(message.charAt(i) == c2mc.E){
+                    decrypt += "E";
+                }
+                else if(message.charAt(i) == c2mc.T){
+                    decrypt += "T";
+                }
+            }
+
+            document.getElementById("outputText").value = decrypt;
+        }
+
+
+        function clearFeilds(){
+            document.getElementById("inputText").value = "";
+            document.getElementById("outputText").value = "";
+        }   
+
+
+        </script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../../IMG/Homepage/facon/img2/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../IMG/Homepage/facon/img2/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../IMG/Homepage/facon/img2/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../IMG/Homepage/facon/img2/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../IMG/Homepage/facon/img2/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../IMG/Homepage/facon/img2/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../IMG/Homepage/facon/img2/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../IMG/Homepage/facon/img2/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../IMG/Homepage/facon/img2/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../IMG/Homepage/facon/img2/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../IMG/Homepage/facon/img2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../IMG/Homepage/facon/img2/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../IMG/Homepage/facon/img2/favicon-16x16.png">
+    <link rel="manifest" href="../../IMG/Homepage/facon/img2/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../IMG/Homepage/facon/img2/">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div class="converterPage" name="converterPage" id="converterPage">
+        <header name="translateMessage" id="translateMessage">
+            <p name="translateMess" id="translateMess">Translate a Message</p>
+            <hr />
+        </header>
+        <main class="inputOutput">
+            <label name="inputLabel" id="inputLabel">Input: </label>
+            <br />
+            <textarea type="text" name="inputText" id="inputText"></textarea>
+            <br />
+            <input type="button" name="c2mcButton" id="c2mcButton" value="C2MC" onclick="charToMorseCode();" />
+            <input type="button" name="mc2cButton" id="mc2cButton" value="MC2C" onclick="morseCodeToChar();" />
+            <input type="button" name="clearButton" id="clearButton" value="Clear" onclick="clearFeilds();"/>
+            <br />
+            <label name="outputLabel" id="outputLabel">Output: </label>
+            <br />
+            <br />
+            <textarea type="text" name="outputText" id="outputText"></textarea>
+        </main>    
+    </div>
+</body>

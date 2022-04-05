@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculation Form</title>
+    <meta charset="utf-8"/>	
+    <script type = "text/javascript">
+        /*
+
+        Students, develop your own code in the following five JS functions.
+        You must write five functions to conduct certain tasks using the form from below.
+        In this HTML file, there are four fields where data are presented to users, which you 
+	must capture when clicking one button which corrolates with each of the fields.  
+
+        You must use  byID to capture those field &#39;s value.You can search for some examples on W3schools.com
+
+        The final function, you must find a way to clear each of the field&#39;s values. 
+
+	   Function 1) Find the interests using this formular I = Prt in this first function.
+	   Assuming the following default values: r = 4.359%
+	                                        : t = 30.0/365.0
+	   Using the textbox you are to capture this user input and compute the interests amount which will be shown
+	   in the <p id="display"> </p> area in the bottom of this html file. 
+
+
+	   Function 2) Have the user enter in the Gravity (m/s&#94;2) and time (s) in order to calcuate falling objects Velocity
+	   Typically, a falling object has a gravity of 9.8 (m/s&#94;2), but do allow anyone to enter in a gravity value.
+	   For instance, Moon's gravity is 1.62 m/s&#94;2 which is unlike Earth's gravity. For time, you can assume it will be
+	   atleast 5 seconds and no more than 100 seconds.
+
+           Using the textbox you are to capture this user input and compute the interests amount which will be shown
+           in the <p id="display"> </p> area in the bottom of this html file.
+
+        */
+        function computePrin() {
+          let princip = document.getElementById("prin").value;
+		  let total = princip * 0.04359 * 360;
+		  document.getElementById("display").innerHTML = total.toString();
+        }
+
+        function computeVelocity() {
+		  let gravity = document.getElementById("gravity").value;
+		  let time = document.getElementById("time").value;
+		  let total = (gravity*time);
+		  document.getElementById("display").innerHTML = total.toString(); 
+        }
+
+		function calculateCompoundIntrest(){
+			let p = document.getElementById("iPrin").value;
+			let r = document.getElementById("rate").value;
+			let n = document.getElementById("ppn").value;
+			let t = document.getElementById("time2").value;
+			let total = ( p * Math.pow((1+(r/n)), (n*t)));
+			document.getElementById("display").innerHTML = total;
+		}
+
+		function calculateSlope(){
+			let pointA = {x1:document.getElementById("x1").value, y1:document.getElementById("y1").value};
+			let pointB = {x1:document.getElementById("x2").value, y1:document.getElementById("y2").value};
+			let numa = (pointB.y1 - pointA.y1);
+			let dema = (pointB.x1 - pointA.x1);
+			let total = (numa/dema);
+			document.getElementById("display").innerHTML = total;
+		}
+
+		function calculateCircumference(){
+			let r = document.getElementById("radius").value;
+			let total = (2*Math.PI*r);
+			document.getElementById("display").innerHTML = total;
+		}
+
+		function clearFeilds(){
+			document.getElementById("prin").value = "";
+			document.getElementById("gravity").value = "";
+			document.getElementById("time").value = "";
+			document.getElementById("iPrin").value = "";
+			document.getElementById("rate").value = "";
+			document.getElementById("ppn").value = "";
+			document.getElementById("time2").value = "";
+			document.getElementById("x1").value = "";
+			document.getElementById("y1").value = "";
+			document.getElementById("x2").value = "";
+			document.getElementById("y2").value = "";
+			document.getElementById("radius").value = "";
+		}
+        </script>
+
+<link rel="apple-touch-icon" sizes="57x57" href="../../IMG/Homepage/facon/img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../IMG/Homepage/facon/img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../IMG/Homepage/facon/img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../IMG/Homepage/facon/img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../IMG/Homepage/facon/img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../IMG/Homepage/facon/img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../IMG/Homepage/facon/img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../IMG/Homepage/facon/img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../IMG/Homepage/facon/img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../IMG/Homepage/facon/img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../IMG/Homepage/facon/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../IMG/Homepage/facon/img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../IMG/Homepage/facon/img/favicon-16x16.png">
+<link rel="manifest" href="../../IMG/Homepage/facon/img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  
+  <body>
+
+    <div class="container">
+	  <div class="main">
+	  
+	    <form action="#" method="post" name="form_name" id="form_id" class="form_class" >
+		  <h2>--Math computation Form--</h2>
+		  
+		  <h5> Computing some value from taking in user inputs.
+		  </h5><hr />
+		  
+		  <label>Principle :</label>
+		  <input type="text" name="prin" id="prin"  /> <label>$</label> <br />	<!-- id would be prin for inputs -->
+		  <br />
+		  
+		  <label>Gravity :</label>
+		  <input type="text" name="gravity" id="gravity"  /> <label>m/s^2</label><br />
+
+		  <label>Time    :</label>
+		  <input type="text" name="time" id="time" /> <label>seconds</label><br />
+		  <br />
+
+		  <label>Principle :</label>
+		  <input type="text" name="iPrin" id="iPrin"/> <label>$</label> <br />
+		  <label>Interest Rate: </label>
+		  <input type="text" name="rate" id="rate"/><label>%</label><br />
+		  <label>Pay Period out of a year/Compounding interval: </label>
+		  <input type="text" name="ppn" id="ppn"/><label>Months</label><br />
+		  <label>Time: </label>
+		  <input type="text" name="time2" id="time2"/><label>Years</label><br />
+		  <br />
+
+		  <label>x1: </label>
+		  <input type="text" name = "x1" id="x1"/><br />
+		  <label>y1: </label>
+		  <input type="text" name="y1" id="y1"><br />
+		  <label>x2</label>
+		  <input type="text" name="x2" id="x2"><br />
+		  <label>y2</label>
+		  <input type="text" name="y2" id="y2"><br />
+		  <br />
+
+		  <label>Radius</label>
+		  <input type="text" name ="radius" id="radius"><br />
+
+		  <br />
+		  <input type="button" id="computePrinButton" name="computePrinButton"    value="CPClick" onclick="computePrin();" /> <!-- Error will start if IdName == funtionName.-->
+		  <input type="button" id="computeVelocityButton" name="computeVelocityButton" value="computeVelocity" onclick = "computeVelocity();" />
+		  <input type="button" id="compoundIntrestCalcButton" name="compoundIntrestCalcButton" value="calcuateCompoundIntrest" onclick="calculateCompoundIntrest();">
+		  <input type="button" id="calculateSlopeButton" name="calculateSlopeButton" value="calculateSlope" onclick="calculateSlope();">
+		  <input type="button" id="calculateCircumferenceButton" name="calculateCircumferenceButton" value="calculateCircumference" onclick="calculateCircumference();">
+          <input type="button" id="clearFieldsButton" name="clearFieldsButton"  value="CFClick" onclick="clearFeilds();" />
+	    </form>
+	  </div> 
+	</div>
+	<p id="display"></p>
+
+  </body>
+  </html>

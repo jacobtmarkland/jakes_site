@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Compound Interest Calculator</title>
+    <meta charset="utf-8"/>	
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="57x57" href="../../IMG/Homepage/facon/img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../IMG/Homepage/facon/img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../IMG/Homepage/facon/img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../IMG/Homepage/facon/img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../IMG/Homepage/facon/img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../IMG/Homepage/facon/img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../IMG/Homepage/facon/img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../IMG/Homepage/facon/img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../IMG/Homepage/facon/img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../IMG/Homepage/facon/img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../IMG/Homepage/facon/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../IMG/Homepage/facon/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../IMG/Homepage/facon/img/favicon-16x16.png">
+    <link rel="manifest" href="../../IMG/Homepage/facon/img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../IMG/Homepage/facon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/projectOneStyle.css" />
+    <script src="../../js/compoundI.js"></script>
+  </head>
+  
+  <body>
+    <div class="container">
+	    <!--    Place your code inside the body   -->
+      <h1>Compound Interest Calculator</h1>
+      <br />
+      <label>Principal</label><br />
+      <br />
+      <input type="text" name="prinInput" id="prinInput" value="Amount" />
+      <br />
+      <br />
+      <label>Interest rate</label><br /><br />
+      <input type="text" name="rateInput" id="rateInput" value="Rate" />
+      <br />
+      <br />
+      <label>Periods</label><br /><br />
+      <input type="text" name="periodInput" id="periodInput" value="Period" />
+      <br /><br />
+      <label>Overall Time</label><br /><br />
+      <input type="text" name="timeInput" id="timeInput" value="Overall Time" />
+      <br />
+      <input class="button" type="button" name="calcButton" id="calcButton" value="Calculate" onclick="calcCompound();" />
+      <br />
+      <br />
+      <p>Final Amount</p>
+      <h2 name="totals" id="totals">0</h2>
+    </div>
+  </body>
+  </html>
