@@ -1,0 +1,40 @@
+<!DOCTYPE html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="../../../css/decimalStyle.css">
+    <script src="../../../js/script1.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body onload="setFocus();">
+    <div class="welcome">
+        <h1 class="welcome" id="welcomeText" name="welcomeText">Welcome to the password encrypter</h1>
+        <h3 class="welcome" id="howToUseText" name="howToUseText">To use the encrypter, please enter a <strong>value</strong> into the password box that is not an empty field</h3>
+        <br />
+        <label>B2D: </label><a href="btod.html">click me</a>
+        <label>D2B: </label><a href="dtob.html">click me</a>
+        <hr />
+    </div>
+    <div class="encrypter">
+        <nav class="encrypter">
+            <label class="encrypter" id="plainTextLabel" name="plainTextLabel">Password: </label><input class="encrypter" type="text" id="plainTextField" name="plainTextField" value="Plain Text" /> <button class="encrypter encrypterB" type="button" name="sumbitButton" id="sumbitButton" onclick="submit()">Sumbit</button> <button class="encrypter encrypterB" type="button" name="clearFieldButton" id="clearFieldButton" onclick="clearFields()">Clear Field</button>
+        </nav>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+        <div class="display">
+            <table class="display table1">
+                <caption class="display"><em>Your Encrypted Data</em></caption>
+                <thead>
+                    <tr><th class="display" colspan="1">Encrytion Type</th><th colspan="3">Value</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="display" id="valueField" name="valueField" colspan="1"><b>Password: </b></td> <td class="display" id="valueOutput" name="valueOutput" colspan="3"></td></tr>
+                    <tr><td class="display" id="aesField" name="aesField" colspan="1"><b>AES Encrypted: </b></td> <td class="display" id="aesFieldOutput" name="aesFieldOutput" colspan="3"></td></tr>
+                    <tr><td class="display" id="sha1Field" name="sha1Field" colspan="1"><b>SHA1 Encrypted: </b></td><td class="display" id="sha1FieldOutput" name="sha1FieldOutput" colspan="3"></td></tr>
+                    <tr><td class="display" id="sha224Field" name="sha224Field" colspan="1"><b>SHA224 Encrypted: </b></td><td class="display" id="sha224FieldOutput" name="sha224FieldOutput" colspan="3"></td></tr>
+                    <tr><td class="display" id="sha256Field" name="sha256Field" colspan="1"><b>SHA256 Encrypted: </b></td><td class="display" id="sha256FieldOutput" name="sha256FieldOutput" colspan="3"></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
